@@ -9,8 +9,9 @@ gem 'bootstrap-sass',       '3.2.0.0'
 gem 'bootstrap-switch-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-# Haml for templating!
-gem "haml-rails", "~> 0.9"
+
+gem 'coffee-rails'
+gem 'react-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

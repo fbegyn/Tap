@@ -15,6 +15,9 @@
 //= require bootstrap
 //= require bootstrap-switch
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
 
 parseIntNaN = function(value) {
