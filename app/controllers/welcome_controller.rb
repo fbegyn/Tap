@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: :token_sign_in
 
   def index
-    render json: { login_url: user_omniauth_authorize_url(:zeuswpi) }
+    render component: 'Index'
   end
 
   def token_sign_in
