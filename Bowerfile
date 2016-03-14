@@ -2,3 +2,6 @@
 # Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
 
 # asset 'bootstrap'
+asset "redux",              github: "reactjs/redux"
+asset "react-redux",        github: "reactjs/react-redux"
+asset "react-router-redux", github: "reactjs/react-router-redux"
