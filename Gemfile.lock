@@ -54,6 +54,7 @@ GEM
     bootstrap-switch-rails (3.3.3)
     bootstrap-will_paginate (0.0.10)
       will_paginate
+    bower-rails (0.10.0)
     builder (3.2.2)
     cancancan (1.13.1)
     capistrano (3.4.0)
@@ -306,6 +307,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.2.0.0)
   bootstrap-switch-rails
   bootstrap-will_paginate (= 0.0.10)
+  bower-rails (~> 0.10.0)
   cancancan
   capistrano (~> 3.1)
   capistrano-passenger
