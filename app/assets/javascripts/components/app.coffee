@@ -1,13 +1,16 @@
-{ createStore, combineReducers, applyMiddleware } = Redux
-{ Router, Route, browserHistory } = 'react-router'
-{ syncHistoryWithStore, routerReducer } = 'react-router-redux'
+{ createStore, combineReducers, applyMiddleware } = require 'redux'
+{ Router, Route, browserHistory } = require 'react-router'
+{ syncHistoryWithStore, routerReducer } = require 'react-router-redux'
+
+{ div } = React.DOM
 
 store = createStore combineReducers
     routing: routerReducer
 
-history = syncHistoryWithStore browserHistory, store
+#history = syncHistoryWithStore(browserHistory, store)
 
-class @App extends React.Component
+class App extends React.Component
     render: ->
-        Provider store: store,
-            Route path: '/', component=Index
+        div className: 'container', "hoi"
+
+module.exports = App

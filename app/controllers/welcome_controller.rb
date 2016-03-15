@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: :token_sign_in
 
   def index
-    #render component: 'App'
+    render component: 'App'
   end
 
   def token_sign_in

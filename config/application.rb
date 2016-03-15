@@ -25,6 +25,6 @@ module Tab002
     config.frecency_num_orders = 100
     config.x.balance_cap = -500
 
-    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+    config.browserify_rails.commandline_options = "-t coffeeify --extension=\".coffee\""
   end
 end
