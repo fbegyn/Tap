@@ -29,6 +29,7 @@ ready = function() {
             $(div).append(data.message);
 
             $("#flash").append(div);
+            window.scrollTo(0,0);
         }
 
     }).on("ajax:error", function(e, xhr, status, error) {
