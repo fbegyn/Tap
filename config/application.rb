@@ -24,5 +24,7 @@ module Tab002
     config.call_api_after = 5.minutes
     config.frecency_num_orders = 100
     config.x.balance_cap = -500
+
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
   end
 end

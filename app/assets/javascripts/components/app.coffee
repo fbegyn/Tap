@@ -1,4 +1,4 @@
-{ createStore, combineReducers, applyMiddleware } = 'redux'
+{ createStore, combineReducers, applyMiddleware } = Redux
 { Router, Route, browserHistory } = 'react-router'
 { syncHistoryWithStore, routerReducer } = 'react-router-redux'
 

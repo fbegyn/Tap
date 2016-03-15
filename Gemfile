@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
+# browserify for bundling javascript
+gem "browserify-rails"
+
 # Assets
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass',       '3.2.0.0'
