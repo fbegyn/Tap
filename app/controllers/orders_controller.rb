@@ -11,7 +11,7 @@
 #
 
 class OrdersController < ApplicationController
-  load_resource :user
+  load_resource :user, find_by: :name
   load_and_authorize_resource :order, through: :user, shallow: true, only: [:overview, :destroy]
   load_and_authorize_resource :order, through: :user, only: [:new, :create]
 

@@ -19,7 +19,9 @@ class Order < ActiveRecord::Base
 
   before_validation :calculate_price
   before_save { |o| o.order_items = o.order_items.reject{ |oi| oi.count == 0 } }
-  after_create :create_api_job, unless: -> { user.guest? }
+
+  after_create :take_monies, unless: -> { user.guest? }
+  after_destroy :give_monies, unless: -> { user.guest? }
 
   after_create :update_user_frecency
   after_destroy :update_user_frecency
@@ -56,14 +58,12 @@ class Order < ActiveRecord::Base
       self.price_cents = self.order_items.map{ |oi| oi.count * (oi.product.try(:price_cents) || 0) }.sum
     end
 
-    def create_api_job
-      return if Rails.env.test?
+    def take_monies
+      self.user.decrement!(:balance, self.price_cents)
+    end
 
-      priority = 0
-      run_at   = Rails.application.config.call_api_after.from_now
-      job      = TabApiJob.new(id)
-
-      Delayed::Job.enqueue job, priority: priority, run_at: run_at
+    def give_monies
+      self.user.increment!(:balance, self.price_cents)
     end
 
     def product_presence

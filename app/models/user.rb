@@ -49,25 +49,6 @@ class User < ActiveRecord::Base
     self.save
   end
 
-  def balance
-    @balance || begin
-      if Rails.env.test?
-        nil
-      else
-        headers = {
-          "Authorization" => "Token token=#{Rails.application.secrets.tab_api_key}",
-          "Content-type" => "application/json"
-        }
-        result = HTTParty.get(File.join(Rails.application.config.api_url, "users", "#{name}.json"), headers: headers)
-
-        if result.code == 200
-          JSON.parse(result.body)["balance"]
-        end
-      end
-    rescue
-    end
-  end
-
   # Static Users
 
   def self.guest
